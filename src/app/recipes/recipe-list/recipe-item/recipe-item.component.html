@@ -1,1 +1,5 @@
-<p>recipe-item works!</p>
+<div [style.background-color]="backColor">
+  <h1>{{ recipe.name }}</h1>
+  <p>{{ recipe.description }}</p>
+  <img [src]="recipe.imagePath" width="100px" />
+</div>
