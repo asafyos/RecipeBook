@@ -1,1 +1,5 @@
-<app-header></app-header>
+<app-header (changeContent)="contentType=$event" ></app-header>
+<div [ngSwitch]="contentType">
+  <app-recipe-list *ngSwitchCase="'recipes'"></app-recipe-list>
+  <app-shopping-list *ngSwitchCase="'shopList'"></app-shopping-list>
+</div>

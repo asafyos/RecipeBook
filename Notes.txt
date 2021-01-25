@@ -1,3 +1,6 @@
+-- Slide 12
+- Give a bit more screenShots, to see the desired outcome.
+
 -- Slide 14
 - Describe more about the meaning of each component. It's not clear at the start of the excersice what the components are.
 - Allaborate the reason for the components to be in each folder, or ommit this component for the time being.
