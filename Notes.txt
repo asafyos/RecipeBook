@@ -1,3 +1,6 @@
+-- Slide 11
+- emphesize more the angular material
+
 -- Slide 12
 - Give a bit more screenShots, to see the desired outcome.
 
