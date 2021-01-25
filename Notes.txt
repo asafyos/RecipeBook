@@ -1,0 +1,12 @@
+-- Slide 14
+- Describe more about the meaning of each component. It's not clear at the start of the excersice what the components are.
+- Allaborate the reason for the components to be in each folder, or ommit this component for the time being.
+- Change the order of tasks. The header is first in the diagram, so its need to be first in order.
+- The CLI addes the components to the app.component automalicly, no need for the last task.
+- Give screen shot for the basic components, or the components in this Slide
+
+-- Slide 15
+- the term 'model' is inconclusive. NgModel is used for forms and data, while the excersice required it to be a file.
+  I beleive the required term is 'class'
+
+
