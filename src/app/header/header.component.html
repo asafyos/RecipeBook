@@ -1,5 +1,7 @@
 <mat-toolbar>
   <span>Recipe book</span>
-  <button mat-button (click)="gotoPage('recipes')">Recipes</button>
-  <button mat-button (click)="gotoPage('shopList')">Shopping list</button>
+  <nav>
+    <a mat-button routerLink="/recipes">Recipes</a>
+    <a mat-button routerLink="/shopping-list">Shopping list</a>
+  </nav>
 </mat-toolbar>

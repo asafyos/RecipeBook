@@ -7,15 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() changeContent = new EventEmitter();
-
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  gotoPage(type: string) {
-    this.changeContent.emit(type);
   }
 
 }

@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'RecipeBook';
 
-  contentType: string;
   constructor() {
-    this.contentType = "recipes";
   }
 }
