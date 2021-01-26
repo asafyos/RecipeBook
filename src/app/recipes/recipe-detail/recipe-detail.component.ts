@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Injector } from '@angular/core';
+import { MatListOption } from '@angular/material/list';
 import { Recipe } from '../recipe-list/recipe';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,9 +9,16 @@ import { Recipe } from '../recipe-list/recipe';
   styleUrls: ['./recipe-detail.component.css'],
 })
 export class RecipeDetailComponent implements OnInit {
-  @Input() recipe : Recipe | undefined;
+  @Input() recipe: Recipe | undefined;
+  shopListSrv!: ShoppingListService;
 
-  constructor() {}
+  constructor(private injector: Injector) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.shopListSrv = this.injector.get(ShoppingListService);
+  }
+
+  onAddToShoplist(ingreds: MatListOption[]) {
+    ingreds.forEach((ing) => this.shopListSrv.addIngredient(ing.value));
+  }
 }

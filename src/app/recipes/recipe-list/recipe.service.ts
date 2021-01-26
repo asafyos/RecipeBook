@@ -32,8 +32,8 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      'Pasta',
-      'Yummy Pasta',
+      'Pizza',
+      'Yummy Pizza',
       'https://4.bp.blogspot.com/-RjhGTGbUBEk/TgHbdYPvPtI/AAAAAAAADc0/E4zNN261-fA/s1600/53.jpg',
       [
         new Ingredient('Tomato Souce', 1),
