@@ -1,1 +1,8 @@
-<p>recipe-detail works!</p>
+<div style="padding-left: 20px">
+  <div *ngIf="recipe; else elseBlock">
+    <h1>{{ recipe.name }}</h1>
+    <p>{{ recipe.description }}</p>
+    <img [src]="recipe.imagePath" width="500px" />
+  </div>
+  <ng-template #elseBlock>Please choose a recipe</ng-template>
+</div>

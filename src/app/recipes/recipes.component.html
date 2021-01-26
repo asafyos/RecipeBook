@@ -1,1 +1,4 @@
-<p>recipes works!</p>
+<div style="display: flex; flex-direction: row;">
+  <app-recipe-list (select)="onSelectItem($event)" ></app-recipe-list>
+  <app-recipe-detail [recipe]="selectedRecipe"></app-recipe-detail>
+</div>

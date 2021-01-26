@@ -1,5 +1,11 @@
-<div [style.background-color]="backColor" class="leftSpace">
-  <h1>{{ recipe.name }}</h1>
-  <p>{{ recipe.description }}</p>
-  <img [src]="recipe.imagePath" width="100px" />
+<div
+  [style.background-color]="backColor"
+  class="leftSpace"
+  style="display: flex; flex-direction: row"
+>
+  <div>
+    <h1>{{ recipe.name }}</h1>
+    <p>{{ recipe.description }}</p>
+  </div>
+  <img [src]="recipe.imagePath" width="100px" class="leftSpace" (click)="onImgClick()" />
 </div>
