@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Injector } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatListOption } from '@angular/material/list';
 import { Recipe } from '../recipe-list/recipe';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
@@ -10,13 +10,10 @@ import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 })
 export class RecipeDetailComponent implements OnInit {
   @Input() recipe: Recipe | undefined;
-  shopListSrv!: ShoppingListService;
 
-  constructor(private injector: Injector) {}
+  constructor(public shopListSrv: ShoppingListService) {}
 
-  ngOnInit(): void {
-    this.shopListSrv = this.injector.get(ShoppingListService);
-  }
+  ngOnInit(): void {}
 
   onAddToShoplist(ingreds: MatListOption[]) {
     ingreds.forEach((ing) => this.shopListSrv.addIngredient(ing.value));

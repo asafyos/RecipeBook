@@ -1,5 +1,6 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingListService } from './shopping-list.service';
+import { HTTPService } from '../Shared/http.service';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,11 +8,16 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit {
-  shopListSrv!: ShoppingListService;
+  constructor(
+    public shopListSrv: ShoppingListService,
+    private httpSrv: HTTPService
+  ) {}
 
-  constructor(private injector: Injector) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.shopListSrv = this.injector.get(ShoppingListService);
+  onAddToDB(): void {
+    this.httpSrv.saveToDb().subscribe((data) => {
+      this.shopListSrv.clearList();
+    });
   }
 }

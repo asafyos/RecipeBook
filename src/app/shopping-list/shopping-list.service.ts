@@ -11,11 +11,15 @@ export class ShoppingListService {
   constructor() { }
 
   public get Ingredients() : Array<Ingredient> {
-    return this.ingredients.splice(0);
+    return this.ingredients;
   }
 
   public addIngredient(ingredient: Ingredient) : void {
     this.ingredients.push(ingredient);
+  }
+
+  public clearList(): void {
+    this.ingredients = [];
   }
 
 }

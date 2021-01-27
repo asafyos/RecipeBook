@@ -1,4 +1,4 @@
-import { Component, OnInit, Injector } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ShoppingListService } from '../shopping-list.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -8,17 +8,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./shopping-list-add.component.css'],
 })
 export class ShoppingListAddComponent implements OnInit {
-  shopListSrv!: ShoppingListService;
   listItemForm = new FormGroup({
     name: new FormControl('', Validators.required),
     amount: new FormControl('', [Validators.required, Validators.min(1)]),
   });
 
-  constructor(private injector: Injector) {}
+  constructor(public shopListSrv: ShoppingListService) {}
 
-  ngOnInit(): void {
-    this.shopListSrv = this.injector.get(ShoppingListService);
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void {
     this.shopListSrv.addIngredient(this.listItemForm.value);
