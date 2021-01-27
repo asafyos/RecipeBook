@@ -14,6 +14,3 @@
 -- Slide 15
 - the term 'model' is inconclusive. NgModel is used for forms and data, while the excersice required it to be a file.
   I beleive the required term is 'class'
-
-
--
