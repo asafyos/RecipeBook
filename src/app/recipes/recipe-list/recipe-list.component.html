@@ -1,6 +1,8 @@
+<div class="item_boundary" cdkDropList cdkDropListSortingDisabled>
 <app-recipe-item
   *ngFor="let recipe of recipes; let odd = odd"
   [recipe]="recipe"
   [backColor]="odd ? 'white' : 'lightgray'"
   (itemSelected)="onItemSelected($event)"
 ></app-recipe-item>
+</div>

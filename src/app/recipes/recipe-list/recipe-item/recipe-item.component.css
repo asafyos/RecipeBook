@@ -1,3 +1,10 @@
 .leftSpace {
   padding: 15px;
 }
+
+.dragBack {
+  background: rgb(15, 148, 15);
+  height: 120px;
+  align-items: center;
+  display: flex;
+}

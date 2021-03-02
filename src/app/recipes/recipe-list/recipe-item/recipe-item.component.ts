@@ -1,3 +1,4 @@
+import { CdkDragDrop, CdkDragEnd } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Recipe } from '../recipe';
 
@@ -12,6 +13,8 @@ export class RecipeItemComponent implements OnInit {
 
   @Output() itemSelected = new EventEmitter();
 
+  dragPosition = { x: 0, y: 0 };
+
   constructor() {
     this.backColor = 'white';
   }
@@ -20,5 +23,9 @@ export class RecipeItemComponent implements OnInit {
 
   onImgClick(): void {
     this.itemSelected.emit(this.recipe);
+  }
+
+  itemDropped(event: CdkDragEnd): void {
+    this.dragPosition = { x: 0, y: 0 };
   }
 }

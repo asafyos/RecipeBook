@@ -2,10 +2,17 @@
   [style.background-color]="backColor"
   class="leftSpace"
   style="display: flex; flex-direction: row"
+  cdkDrag cdkDragLockAxis="x"
+  (cdkDragEnded)="itemDropped($event)"
+  [cdkDragFreeDragPosition]="dragPosition"
+  cdkDragBoundary=".item_boundary"
 >
   <div>
     <h1>{{ recipe.name }}</h1>
     <p>{{ recipe.description }}</p>
   </div>
   <img [src]="recipe.imagePath" width="100px" class="leftSpace" (click)="onImgClick()" />
+  <div class="dragBack" *cdkDragPlaceholder>
+    <mat-icon matSuffix style="margin-left: 5px;">check_box</mat-icon>
+  </div>
 </div>
